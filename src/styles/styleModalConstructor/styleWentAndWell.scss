@@ -1,0 +1,62 @@
+@import "../styleVariables.scss";
+
+.overflow_went_well{
+   z-index: 100;
+   @extend %overflow;
+   .modal_went_well{
+      @include widthHeightBack(600px, 300px, $clr3);
+      @extend %modalBlock;
+      .modal_conteiner_went_well{
+         @include widthHeightBack(550px, 300px, $clr3);
+         .close_modal_oveflow{
+            @extend %closeModal;
+         }
+         .title_modal_oveflow{
+            @extend %titleModal;
+            margin-top: 35px
+         }
+         .subTitle_modal_oveflow{
+            @extend %smallThinText;
+            @extend %subtitleModal;
+         }
+         .where_send_modal_oveflow{
+            text-align: center;
+            margin-bottom: 35px;
+         }
+         .flex_button_modal_oveflow_went_well{
+            @include display(center, center);
+            position: relative;
+            .button{
+               @include widthHeightBack(265px, 60px, $clr1);
+               border: none;
+               .text_button{
+                  @extend %textButton;
+               }
+            }
+            .button:hover{
+               @include widthHeightBack(265px, 60px, $clr5);
+               border: none;
+            }
+         }
+      }
+   }
+}
+
+
+.overflow_went_well.open{
+   visibility: visible;
+   background-color: rgba(10, 10, 10, .8);
+   .modal_went_well{
+      visibility: visible;
+      transform: translateY(0);
+   }
+} 
+
+.overflow_went_well.close{
+   visibility: hidden;
+   background-color: rgba(10, 10, 10, .0);
+   .modal_went_well{
+      visibility: visible;
+      transform: translateY(-800px);
+   }
+} 

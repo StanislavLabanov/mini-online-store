@@ -1,0 +1,108 @@
+$clr1: #FFC85E;
+$clr2: #111111;
+$clr3: #fff;
+$clr4: #3F4E65;
+$clr5: #F3A50D;
+$clr6: #EDEDED;
+$clr7: #1FD85D;
+$clr8: #D4D4D4;
+
+@mixin charactering($color, $weight, $size){
+   color: $color;
+   font-weight: $weight;
+   font-size: $size;
+}
+
+@mixin widthHeightMarg($width, $height, $marginlft){
+   width: $width;
+   height: $height;
+   margin-left: $marginlft;
+}
+
+@mixin widthHeightBack($width, $height, $backcolor){
+   width: $width;
+   height: $height;
+   background-color: $backcolor;
+}
+
+@mixin display($position, $item){
+   display: flex;
+   justify-content: $position;
+   align-items: $item;
+}
+
+@mixin menuAndCatalogElem($color, $weight, $size){
+   color: $color;
+   font-weight: $weight;
+   font-size: $size;
+   text-decoration: none;
+   transition: all .35s ease;
+}
+
+%conteiner{
+   max-width: 1366px;
+   margin: 0 auto;
+}
+
+%smallBoldText{
+   @include charactering($clr2, 600, 16px);
+}
+
+%smallThinText{
+   @include charactering($clr2, 300, 14px);
+}
+
+%inputImg{
+   @include  display(center, center);
+   cursor: pointer;
+   border-radius: 50%;
+   margin-right: 10px;
+}
+
+
+/* Modal Styles */
+%overflow{
+   visibility: hidden;
+   position: fixed;
+   top: 0;
+   left: 0;
+   @include widthHeightBack(100%, 100%, rgba(10, 10, 10, .0));
+   @include display(center, center);
+   transition: all .35s ease-in-out;
+}
+
+%modalBlock{
+   transform: translateY(-800px);
+   @include display(center, center);
+   transition: transform .5s ease-in-out;
+}
+
+%closeModal{
+   display: block;
+   cursor: pointer;
+   position: absolute;
+   top: 36px;
+   right: 36px;
+}
+
+%titleModal{
+   @include charactering($clr2, 500, 30px);
+   text-align: center;
+   margin-bottom: 15px;
+}
+
+%subtitleModal{
+   text-align: center;
+   margin-bottom: 35px;
+   line-height: 20px;
+}
+
+%inputText{
+   @include charactering($clr2, 500, 16px);
+   margin-bottom: 10px;
+}
+
+%textButton{
+   @include charactering($clr3, 700, 14px);
+   margin-right: 10px;
+}

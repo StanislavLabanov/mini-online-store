@@ -1,0 +1,45 @@
+@import "styleVariables.scss";
+
+.best_products{
+   max-width: 100%;
+   max-height: 100%;
+   .slider_best_products{
+      width: 100%;
+      .hidden_block_best_products{
+         overflow: hidden;
+         .slider_line_hidden_block{
+            display: flex;
+            position: relative;
+            left: 0;
+            transition: all .5s ease-in;
+            .images_slider_line{
+               @include display(space-between, center);
+               margin-bottom: 40px;
+               padding: 20px 0;
+               @include widthHeightMarg(100%, 77px, 0px);
+               .image_product{
+                  transform: scale(1.0);
+                  transition: transform .15s ease-in;
+               }
+               .image_product:hover{
+                  transform: scale(1.1);
+               }
+            }
+         }
+      }
+      .block_btns_slider{
+         @include display(space-between, center);
+         @include widthHeightMarg(92px, 7px, 0px);
+         margin: 0 auto;
+         .btn_block_slider{
+            @include widthHeightBack(16px, 100%, $clr4);
+            cursor: pointer;
+            transition: all .35s ease-in;
+         }
+         .btn_block_slider.active{
+            background-color: #FFC85E;
+            transform: scale(1.2);
+         }
+      }
+   }
+}

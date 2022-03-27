@@ -1,0 +1,56 @@
+@import "styleVariables.scss";
+
+
+.block_map_and_contacts{
+   margin: 100px 0;
+   height: 600px;
+   background-image: url('../images/Rectangle 427.png');
+   position: relative;
+   .contacts_block{
+      position: absolute;
+      left: 30px;
+      top: 50px;
+      background-color: rgba(248, 248, 248, 0.3);
+      backdrop-filter: blur(12px);
+      .conteiner_contacts_block{
+         padding: 60px 100px 70px 50px;
+         .sales_department_block{
+            .bold_little_text{
+               margin: 0 0 10px 0;
+            }
+            .text_contacts_block{
+               margin: 0;
+            }
+         }
+         .address_and_sales_department{
+            margin-bottom: 50px;
+         }
+         .bold_little_text{
+            margin: 0 0 10px 30px;
+         }
+         .text_contacts_block{
+            @extend %smallThinText;
+            margin-left: 10px;
+         }
+         .page_sections{
+            margin: 0;
+         }
+         .subsection_section{
+            margin: 15px 0 25px 0;
+         }
+         .address_and_sales_department{
+            @include display(left, center);
+            .address_block{
+               margin-right: 70px
+            }
+         }
+      }
+   }
+}
+
+.flex_map_block{
+   @include display(left, center);
+   img{
+      @include widthHeightMarg(20px, 20px, 0);
+   }
+}

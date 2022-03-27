@@ -1,0 +1,71 @@
+@import "../styleVariables.scss";
+
+.conteiner{
+   .basket_title{
+      @include charactering($clr2, 500, 40px);
+      text-transform: uppercase;
+      margin-top: 50px;
+   }
+   .block_basket_elements{
+      margin: 50px 0;
+         .card_basket{
+            @include display(left, center);
+            border-top: 1px solid $clr4;
+            border-bottom: 1px solid $clr4;
+            margin-bottom: 50px;
+            padding: 50px 0;
+            .img_conteiner{
+               @include widthHeightMarg(280px, 190px, 0px);
+               @include display(center, center)
+            }
+            .flex_charecter{
+               @include widthHeightMarg(660px, 160px, 20px);
+               .barcode{
+                  @include charactering($clr2, 700, 30px);
+                  margin-bottom: 10px;
+               }
+               .manufacturer{
+                  @include charactering($clr4, 300, 12px);
+                  line-height: 18px;
+               }
+            }
+            .flex_block_product_card{
+               position: relative;
+               @include display(center, center);
+               margin-left: 60px;
+               button{
+                  @include display(center, center);
+                  @include widthHeightBack(30px, 30px, $clr1);
+                  border: none;
+                  border-radius: 50%;
+                  transition: background-color .25s ease-in;
+                  margin: 0 10px;
+               }
+               button:hover{
+                  background-color: $clr5;
+               }
+               .number_products_basket{
+                  position: absolute;
+               }
+            }
+            .prise{
+               @include charactering($clr2, 700, 30px);
+               margin-left: 60px;
+            }
+            .remove_element{
+               @include display(center, center);
+               border-radius: 50%;
+               cursor: pointer;
+               @include widthHeightMarg(60px, 60px, 60px);
+               background-color: $clr5;
+            }
+         }
+   }
+   .flex_prise_and_order{
+      @include display(space-between, center);
+      margin-bottom: 100px;
+      .prise_basket{
+         @include charactering($clr2, 700, 30px);
+      }
+   }
+}

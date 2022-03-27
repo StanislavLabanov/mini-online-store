@@ -1,0 +1,72 @@
+@import "styleVariables.scss";
+
+.footer{
+   background-color: #3F4E65;
+   padding-bottom: 50px;
+   .conteiner_footer{
+      width: 1366px;
+      @include display(space-between, top);
+      padding-top: 71px;
+      margin: 0 auto;
+      .text_our_advantages{
+         margin-bottom: 15px;
+      }
+      .menu_footer{
+         margin-left: -40px;
+      }
+      .title_footer{
+         @include charactering($clr3, 600, 20px);
+         margin-bottom: 25px;
+      }
+      .description_block_footer{
+         p{
+            margin: 15px 0 45px 0;
+            @include charactering($clr3, 400, 16px);
+            line-height: 24px;
+         }
+      }
+      .elem_footer{
+         margin-bottom: 20px;
+         list-style-type: none;
+         a{
+            @include charactering($clr3, 400, 14px);
+            text-decoration: none;
+            transition: color .2s ease-in;
+         }
+         a:hover{
+            color: $clr5;
+         }
+      }
+      .download_price_list_block{
+         .text_our_advantages{
+            margin-top: 20px;
+         }
+         a:first-child{
+            margin-right: 10px;
+         }
+      }
+      .contacts_footer_block{
+         .bold_little_text{
+            line-height: 30px;
+            color: $clr3;
+            span{
+               color: $clr3;
+            }
+         }
+         .order_call{
+            margin: 5px 0 25px 0;
+            color: $clr3;
+            border-color: $clr3;
+            transition: all .25s ease-in;
+         }
+         .order_call:hover{
+            color: $clr5;
+            border-color: $clr5;
+         }
+         img{
+            margin-top: 15px;
+         }
+      }
+   }
+}
+

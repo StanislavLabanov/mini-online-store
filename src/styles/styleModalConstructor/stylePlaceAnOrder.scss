@@ -1,0 +1,47 @@
+@import "../styleVariables.scss";
+
+.overflow_plaseAnOrder{
+   z-index: 100;
+   @extend %overflow;
+   .modal_plaseAnOrder{
+      @include widthHeightBack(500px, 300px, $clr3);
+      @extend %modalBlock;
+      border: 7px solid $clr5;
+      .modal_conteiner_plaseAnOrder{
+         @include widthHeightBack(550px, 280px, $clr3);
+         .close_modal_oveflow{
+            @extend %closeModal;
+         }
+         .title_modal_oveflow{
+            @include charactering($clr2, 500, 40px);
+            margin: 40px 0;
+            text-align: center;
+         }
+         .subTitle_modal_oveflow{
+            @include charactering($clr5, 300, 20px);
+            text-align: center;
+            line-height: 30px;
+            @extend %subtitleModal;
+         }
+      }
+   }
+}
+
+
+.overflow_plaseAnOrder.open{
+   visibility: visible;
+   background-color: rgba(10, 10, 10, .8);
+   .modal_plaseAnOrder{
+      visibility: visible;
+      transform: translateY(0);
+   }
+} 
+
+.overflow_plaseAnOrder.close{
+   visibility: hidden;
+   background-color: rgba(10, 10, 10, .0);
+   .modal_plaseAnOrder{
+      visibility: visible;
+      transform: translateY(-800px);
+   }
+} 

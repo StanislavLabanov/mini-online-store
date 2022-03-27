@@ -1,0 +1,61 @@
+@import "styleVariables.scss";
+
+
+.catalog_modal{
+   z-index: 1;
+   @include widthHeightBack(100%, 100%, $clr3);
+   position: absolute;
+   top: 166px;
+   padding-top: 30px;
+   transform: translateX(-100%);
+   transition: transform 0.35s ease-out;
+   .flex_elements_catalog_modal{
+      @include display(space-between, top);
+      .element_block:first-child{
+         border-right: .1px solid $clr2;
+         padding-right: 80px;
+      }
+      .element_block{
+         .top_element_block{
+            margin-bottom: 80px;
+         }
+         .button{
+            @include widthHeightBack(260px, 56px, $clr3);
+            transition: all .35s ease-in;
+            margin-top: 20px;
+            @include charactering($clr2, 600, 16px)
+         }
+         .button:hover{
+            background-color: $clr5;
+            color: $clr3;
+         }
+         ul{
+            list-style-type: none;
+            li{
+               margin-bottom: 15px;
+               a{
+                  text-decoration: none;
+                  @include charactering($clr2, 400, 16px);
+                  transition: color .25s ease-in;
+               }
+               a:hover{
+                  color: $clr5;
+               }
+            }
+            li:first-child{
+               margin-bottom: 20px;
+               @include charactering($clr2, 500, 20px);
+            }
+         }
+      }
+   }
+}
+
+.catalog_modal.open{
+   transform: translateY(0px);
+}
+
+.catalog_modal.close{
+   transform: translateX(-100%);
+   transition: transform 0.35s ease-out;
+}

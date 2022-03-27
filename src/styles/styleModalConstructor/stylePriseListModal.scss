@@ -1,0 +1,86 @@
+@import "../styleVariables.scss";
+
+.overflow_prise_list{
+   z-index: 100;
+   @extend %overflow;
+   .modal_prise_list{
+      @include widthHeightBack(735px, 600px, $clr3);
+      @extend %modalBlock;
+      .modal_conteiner_prise_list{
+         @include widthHeightBack(625px, 510px, $clr3);
+         .close_modal_oveflow{
+            @extend %closeModal;
+         }
+         .title_modal_oveflow{
+            @extend %titleModal;
+         }
+         .subTitle_modal_oveflow{
+            @extend %smallThinText;
+            @extend %subtitleModal;
+         }
+         .input_block_prise_list{
+            .flex_input_one_modal_oveflow, .flex_input_two_modal_oveflow{
+               @include display(space-between, center);
+               margin-bottom: 15px;
+               .modal_input_block{
+                  .text_input_block{
+                     @extend %inputText;
+                  }
+                  .input_modal{
+                     @include widthHeightBack(265px, 60px, $clr6);
+                     @include display(space-between, center);
+                     border-radius: 36px;
+                  }
+               }
+            }
+         }
+         .where_send_modal_oveflow{
+            @include charactering($clr2, 700, 14px);
+            margin: 15px 0 25px 0;
+         }
+         .flex_button_modal_oveflow_prise_list{
+            @include display(left, center);
+            position: relative;
+            .button{
+               @include widthHeightBack(127px, 60px, $clr8);
+               border: none;
+               transition: background-color .35s ease-in;
+               margin-right: 10px;
+               .text{
+                  @extend %textButton;
+               }
+            }
+            .button:last-child{
+               @include widthHeightBack(265px, 60px, $clr1);
+               border: none;
+               margin: 0;
+               transition: background-color .35s ease-in;
+               position: absolute;
+               right: 0;
+            }
+            .button:last-child:hover{
+               background-color: $clr5 ;
+            }
+         }
+      }
+   }
+}
+
+
+.overflow_prise_list.open{
+   visibility: visible;
+   background-color: rgba(10, 10, 10, .8);
+   .modal_prise_list{
+      visibility: visible;
+      transform: translateY(0);
+   }
+} 
+
+.overflow_prise_list.close{
+   visibility: hidden;
+   background-color: rgba(10, 10, 10, .0);
+   .modal_prise_list{
+      visibility: visible;
+      transform: translateY(-800px);
+   }
+} 

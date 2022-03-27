@@ -1,0 +1,199 @@
+@import "styleVariables.scss";
+
+
+// Стили для html
+
+html{
+   scroll-behavior: smooth;
+}
+
+// Стили всего body
+body{
+   font-family: Inter;
+   margin: 0;
+   padding: 0;
+   position: relative;
+   .conteiner{
+      @extend %conteiner;
+   }
+   .bold_little_text{
+      @extend %smallBoldText;
+      span{
+         @extend %smallThinText;
+      }
+   }
+   .button{
+      @include charactering($clr3, 700, 16px);
+      @include widthHeightBack(200px, 60px, $clr1);
+      border: 2px solid $clr1;
+      border-radius: 79px;
+      cursor: pointer;
+      transition: all .25s ease-in;
+      transition: color .25s ease-in;
+      transition: background-color .25s ease-in;
+      @include display(center, center);
+         .catalog_image{
+            background-image: url('../images/Frame 125.png');
+            @include widthHeightMarg(15px, 15px, 15px);
+            transition: background-image .25s ease-in;
+      }
+   }
+   .button:hover{
+      background-color: $clr5;
+   }
+   .input_header{
+      @include widthHeightMarg(70%, 40px, 20px);
+      border: none;
+      background: none;
+      outline: none;
+   }
+   .order_call{
+      line-height: 15px;
+      display: inline-block;
+      cursor: pointer;
+      @include charactering($clr2, 400, 14px);
+      border-bottom: 0.5px solid $clr2;
+      transition: all .25s ease-in;
+   }
+   .order_call:hover{
+      @include charactering($clr5, 400, 14px);
+      border-color: $clr5
+   }
+   .background_input_image{
+      @include widthHeightBack(40px, 40px, $clr1);
+      @extend %inputImg;
+      transition: background-color .25s ease-in;
+   }
+   .background_input_image:hover{
+      background-color: $clr5;
+   }
+   .main_title_site{
+      @include charactering($clr3, 500, 70px);
+      text-align: left;
+      margin: 0;
+   }
+   .big_button_site{
+      @include widthHeightBack(320px, 90px, $clr1);
+      @include charactering($clr3, 700, 18px);
+      text-transform: uppercase;
+      border: none;
+      border-radius: 79px;
+      cursor: pointer;
+      transition: background-color .25s ease-in;
+   }
+   .big_button_site:hover{
+      background-color: $clr5;
+   }
+   .page_sections{
+      @include charactering($clr2, 500, 40px);
+      text-transform: uppercase;
+      margin-top: 100px;
+      span{
+         @include charactering($clr1, 800, 40px);
+      }
+   }
+   .subsection_section{
+      @include charactering($clr4, 300, 20px);
+      margin: 15px 0 50px 0;
+   }
+   .text_our_advantages{
+      @include charactering($clr3, 400, 14px);
+   }
+   .input_block_input_field{
+      @include widthHeightBack(265px, 64px, $clr6);
+      @include display(space-between, center);
+      border-radius: 36px;
+   }
+   .prise_image{
+      @include widthHeightMarg(18px, 18px, 15px);
+      background-image: url('../images/bx_bxs-download.png');
+   }
+   
+}
+
+
+
+
+@media (max-width: 1400px){
+   body{
+      .button{
+         @include charactering($clr3, 600, 14px);
+         @include widthHeightBack(150px, 50px, $clr1);
+      }
+      .bold_little_text{
+         font-size: 14px;
+         span{
+            font-size: 12px;
+         }
+      }
+      .conteiner{
+         width: 1100px;
+         margin: 0 auto;
+         .big_button_site{
+            @include widthHeightBack(270px, 80px, $clr1);
+            @include charactering($clr3, 600, 16px);
+         }
+         .product_card{
+            max-width: 250px;
+            max-height: 470px;
+            .product_card_conteiner{
+               max-width: 220px;
+               .button{
+                  max-width: 130px;
+                  font-size: 14px;
+               }
+            }
+         }
+         .card_product{
+            max-height: 220px;
+            max-width: 200px;
+            .background_card{
+               max-height: 220px;
+            }
+            img{
+               max-width: 200px;
+            }
+         }
+         .remove_element{
+            max-width: 40px;
+            max-height: 40px;
+         }
+         .img_products_card{
+            max-height: 150px;
+            margin: 0;
+         }
+      }
+      .header{
+         .header_top_block, .header_bottom_block{
+            .header_conteiner{
+               max-width: 1100px;
+               .text_header_bottom{
+                  display: none;
+               }
+               .menu{
+                  li{
+                     margin-left: 40px;
+                     a{
+                        font-size: 14px;
+                     }
+                  }
+               }
+            }
+         }
+      }
+      .footer{
+         .conteiner_footer{
+            max-width: 1100px;
+            .description_block_footer{
+               p{
+                  font-size: 14px;
+               }
+         }
+            .title_footer{
+               @include charactering($clr3, 600, 16px);
+               margin-bottom: 20px;
+            }
+         }
+      }
+   }
+}
